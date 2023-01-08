@@ -6,6 +6,10 @@
             <p> <%= user.username %> </p>
             <p> <%= user.password %> </p>
             <p> <%= user.email %> </p>
+            <%= link_to "Edit User", edit_user_path(user) %>
+            <%= link_to "Destoy User", user_path(user), data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"} %>
         </li>
     <% end %>
 </ul>
